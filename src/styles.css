@@ -4,14 +4,36 @@ body {
 
 .tableStyles {
   border-collapse: collapse;
-  margin: 200px auto 10px;
+  margin: 50px auto 50px;
 }
 
 .cellStyles {
   border: 1px solid red;
-  padding: 8px;
+  padding: 3px;
   width: 80px;
   height: 80px;
   cursor: pointer;
   font-size: 30px;
+}
+
+.button {
+  border: none;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  color: blue;
+  font-size: 60px;
+  cursor: pointer;
+}
+
+.button0 {
+  border: none;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  color: green;
+  font-size: 60px;
+  cursor: pointer;
 }

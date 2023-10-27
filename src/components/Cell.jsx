@@ -1,16 +1,17 @@
 import "../styles.css";
-import { useState } from "react";
 
-const Cell = () => {
-  const [value, setValue] = useState(null);
-
-  const onChangeValue = () => {
-    setValue((value) => (value = "X"));
-  };
-
+const Cell = ({ onChangeValue, value = "" }) => {
+  let color = "";
+  if (value === "X") {
+    color = "button";
+  } else {
+    color = "button0";
+  }
   return (
-    <td className="cellStyles" onClick={onChangeValue}>
-      {value}
+    <td className="cellStyles">
+      <button className={color} onClick={onChangeValue} disabled={value}>
+        {value}
+      </button>
     </td>
   );
 };
