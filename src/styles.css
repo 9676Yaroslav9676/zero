@@ -37,3 +37,12 @@ body {
   font-size: 60px;
   cursor: pointer;
 }
+
+.reboot {
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}

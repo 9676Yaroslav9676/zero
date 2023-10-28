@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles.css";
 import Cell from "./Cell";
-import HiddenButton from "./HiddenButton";
+
 
 const Table = () => {
   const [value, setValue] = useState("X");
@@ -11,15 +11,23 @@ const Table = () => {
     ["", "", ""],
   ]);
 
-  const isFullArray = board.every((item) => item !== "");
+  let isFullArray = board.every((arr) => arr.every((item) => item !== ""));
+  const handleButtonClick = () => {
+    window.location.reload()
+  };
 
-  if (isFullArray) {
+  if(board[0][0] === "X" && board[1][0] === "X" && board[2][0] === "X"){
+    isFullArray = true
+  }
+  if(board[0].every((item) => item === "X")){
+    isFullArray = true
   }
 
   const onChange = (rowIndex, cellIndex) => {
     setBoard((prev) => {
-      let res = [...prev];
+      let res = [...prev]; 
       res[rowIndex][cellIndex] = value;
+      console.log(res)
       return res;
     });
 
@@ -29,7 +37,7 @@ const Table = () => {
   return (
     <div>
       <h1>Turn: {value}</h1>
-      <HiddenButton />
+      
       <table className="tableStyles">
         {board.map((row, rowIndex) => {
           return (
@@ -46,6 +54,10 @@ const Table = () => {
           );
         })}
       </table>
+      <div>
+      <button  className="reboot" onClick={handleButtonClick} hidden={!isFullArray}>Перезапустити</button>
+      </div>
+      
     </div>
   );
 };
