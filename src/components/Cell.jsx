@@ -1,6 +1,6 @@
 import "../styles.css";
 
-const Cell = ({ onChangeValue, value = "" }) => {
+const Cell = ({ onChangeValue, value = "", isFullArray }) => {
   let color = "";
   if (value === "X") {
     color = "button";
@@ -8,11 +8,15 @@ const Cell = ({ onChangeValue, value = "" }) => {
     color = "button0";
   }
   return (
-    <td className="cellStyles">
-      <button className={color} onClick={onChangeValue} disabled={value}>
+    <div className="cellStyles">
+      <button
+        className={color}
+        onClick={onChangeValue}
+        disabled={value || isFullArray}
+      >
         {value}
       </button>
-    </td>
+    </div>
   );
 };
 

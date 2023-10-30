@@ -2,8 +2,12 @@ body {
   text-align: center;
 }
 
+.tableBody {
+  display: inline-block;
+}
+
 .tableStyles {
-  border-collapse: collapse;
+  display: flex;
   margin: 50px auto 50px;
 }
 
